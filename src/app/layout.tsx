@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from '@/app/components/Header/Header';
+import Header from '@/components/Header/Header';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${inter.className} antialiased flex flex-col min-h-screen`}>
+      <head>
+        {/* Añade FontAwesome para los iconos */}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+      </head>
+      <body className={`${inter.className} antialiased`}>
         <Header />
-        <main className="flex-grow">{children}</main>
+        <main className="">{children}</main>
       </body>
     </html>
   );
